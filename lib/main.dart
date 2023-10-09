@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_chess_board/flutter_chess_board.dart';
 
@@ -37,11 +39,29 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Chess Demo'),
       ),
       drawer: Drawer(
-                child: ListView(
-          children: const [
+        child: ListView(
+          children: [
             DrawerHeader(
-                decoration: BoxDecoration(color: Colors.yellowAccent),
-                child: Text("My Home Page")),
+              decoration: BoxDecoration(color: Colors.yellowAccent),
+              child: const Text("My Home Page")),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text("DeveloperX"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text("DeveloperX"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            )
           ],
         ),
       ),
