@@ -36,6 +36,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Chess Demo'),
       ),
+      drawer: Drawer(
+                child: ListView(
+          children: const [
+            DrawerHeader(
+                decoration: BoxDecoration(color: Colors.yellowAccent),
+                child: Text("My Home Page")),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Expanded(
