@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_chess_board/flutter_chess_board.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Clone Lichess project',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -36,29 +37,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chess Demo'),
+        title: const Text('Clone Lichess project'),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             DrawerHeader(
               decoration: BoxDecoration(color: Colors.yellowAccent),
-              child: const Text("My Home Page")),
+              child: const Text("Our Web page")),
             ListTile(
-              title: Text('Item 1'),
+              title: Text('Devpeloper : HiroAlpha'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("DeveloperX"),
+              title: Text("DevX : HirotoKoyama"),
+              
               onTap: () {
+                //if taped bottan, jump to dep team x account
+                try {
+                  final uri = Uri.parse('https://twitter.com/8485835066men');
+                  launchUrl(uri);
+                } on Exception catch (e) {
+                  print(e);
+                };
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("DeveloperX"),
+              title: Text("DevX : Ibchiko"),
               onTap: () {
+                //if taped bottan, jump to dep team x account
+                try {
+                  final uri = Uri.parse('https://twitter.com/R_BECOMETIGER');
+                  launchUrl(uri);
+                } on Exception catch (e) {
+                  print(e);
+                };
                 Navigator.pop(context);
               },
             )
