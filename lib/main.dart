@@ -43,8 +43,8 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.yellowAccent),
-              child: const Text("Our Web page")),
+                decoration: BoxDecoration(color: Colors.yellowAccent),
+                child: const Text("Our Web page")),
             ListTile(
               title: Text('Devpeloper : HiroAlpha'),
               onTap: () {
@@ -53,7 +53,6 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               title: Text("DevX : HirotoKoyama"),
-              
               onTap: () {
                 //if taped bottan, jump to dep team x account
                 try {
@@ -61,20 +60,22 @@ class _HomePageState extends State<HomePage> {
                   launchUrl(uri);
                 } on Exception catch (e) {
                   print(e);
-                };
+                }
+                ;
                 Navigator.pop(context);
               },
             ),
             ListTile(
               title: Text("DevX : Ibchiko"),
               onTap: () {
-                //if taped bottan, jump to dep team x account
+                //When button is tapped, jump to DEV team X account
                 try {
                   final uri = Uri.parse('https://twitter.com/R_BECOMETIGER');
                   launchUrl(uri);
                 } on Exception catch (e) {
                   print(e);
-                };
+                }
+                ;
                 Navigator.pop(context);
               },
             )
@@ -121,6 +122,12 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
+          OutlinedButton(
+            onPressed: () {
+              controller.resetBoard();
+            },
+            child: Text('New Game'),
+          )
         ],
       ),
     );
